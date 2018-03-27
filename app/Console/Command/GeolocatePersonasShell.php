@@ -3,68 +3,66 @@
 App::uses('Sanitize', 'Utility');
 App::import('Vendor', 'funciones');
 
-class GeolocateAdultosShell extends AppShell {
+class GeolocatePersonasShell extends AppShell {
 
-    public $uses = array('BaseAdultos.Adulto');
+    public $uses = array('Padron.Persona');
     public $limit = false;
-    public $max = 50;
+    public $max = 500;
     public $key = "AIzaSyCqt7h8AmXvttFKpf4hCPqxFzdaEChRFcI";
 
     public function main() {
         $this->out("GEOLOCALIZANDO ADULTOS " . date("d/m/Y H:i"));
-        $this->adultos();
+        $this->personas();
         $this->out("FIN " . date("d/m/Y H:i"));
     }
 
-    protected function adultos() {
-        $adultos = $this->Adulto->find("all", [
+    protected function personas() {
+
+        $personas = $this->Persona->find("all", [
             "limit" => $this->max,
             "conditions" => [
-//                "Adulto.id" => ["57174"],
                 "OR" => [
-                    "AdultoUbicacion.id" => null,
-                    "AdultoUbicacion.estado_geo" => "Sin geolocalizar",
+                    "PersonaUbicacion.id" => null,
+                    "PersonaUbicacion.estado_geo" => "Sin geolocalizar",
                 ]
             ]
         ]);
 
-        if (empty($adultos)) {
+        if (empty($personas)) {
             $this->out("NO HAY NADA PARA GEOLOCALIZAR");
             return;
         }
 
-        foreach ($adultos as $key => $adulto) {
-            if ($adulto['AdultoUbicacion']['id']) {
-                $this->Adulto->AdultoUbicacion->id = $adulto['AdultoUbicacion']['id'];
-                $this->Adulto->AdultoUbicacion->saveField('estado_geo', "Geolocalizando");
+        foreach ($personas as $key => $persona) {
+            if ($persona['PersonaUbicacion']['id']) {
+                $this->Persona->PersonaUbicacion->id = $persona['PersonaUbicacion']['id'];
+                $this->Persona->PersonaUbicacion->saveField('estado_geo', "Geolocalizando");
             } else {
-                $this->Adulto->AdultoUbicacion->create();
-                $this->Adulto->AdultoUbicacion->save([
-                    "adulto_id" => $adulto['Adulto']['id'],
+                $this->Persona->PersonaUbicacion->create();
+                $this->Persona->PersonaUbicacion->save([
+                    "persona_id" => $persona['Persona']['id'],
                     "estado_geo" => "Geolocalizando",
                 ]);
-                $ubicacion_adulto_id = $this->Adulto->AdultoUbicacion->getLastInsertID();
-                $adultos[$key]['AdultoUbicacion']['id'] = $ubicacion_adulto_id;
+                $ubicacion_persona_id = $this->Persona->PersonaUbicacion->getLastInsertID();
+                $personas[$key]['PersonaUbicacion']['id'] = $ubicacion_persona_id;
             }
         }
 
-        foreach ($adultos as $adulto) {
-            $this->Adulto->AdultoUbicacion->id = $adulto['AdultoUbicacion']['id'];
+        foreach ($personas as $persona) {
+            $this->Persona->PersonaUbicacion->id = $persona['PersonaUbicacion']['id'];
 
             // Si el flag indica que se cumplio el limite los pongo uno por uno devuelta como "Sin geolocalizar"
             if ($this->limit) {
-                $this->Adulto->AdultoUbicacion->saveField('estado_geo', "Sin geolocalizar");
+                $this->Persona->PersonaUbicacion->saveField('estado_geo', "Sin geolocalizar");
                 continue;
             }
-
+          
             // Geolocalizo
-            $url_google = "https://maps.googleapis.com/maps/api/geocode/json?key=" . $this->key . "&address=" . urlencode(trim($adulto['Adulto']['direccion']) . ", Ciudad Autónoma de Buenos Aires, Argentina") . "&sensor=false";
+            $url_google = "https://maps.googleapis.com/maps/api/geocode/json?key=" . $this->key . "&address=" . urlencode(trim($persona['Persona']['domicilio']) . $persona['Persona']['zona_civica'] . ", Argentina") . "&sensor=false";
             $json = file_get_contents($url_google);
             $jdata = json_decode($json, true);
-
-            // Si google nos dice que se cumplio el limite lo pongo devuelta como "Sin geolocalizar" y cambio el flag
             if ($jdata['status'] == "OVER_QUERY_LIMIT") {
-                $this->Adulto->AdultoUbicacion->saveField('estado_geo', "Sin geolocalizar");
+                $this->Persona->PersonaUbicacion->saveField('estado_geo', "Sin geolocalizar");
                 $this->out("OVER_QUERY_LIMIT");
                 $this->out("---------------------------------------------------------------");
                 $this->limit = true;
@@ -91,10 +89,10 @@ class GeolocateAdultosShell extends AppShell {
                 $array['location'] = $jdata['results'][0]['geometry']['location']['lat'] . "," . $jdata['results'][0]['geometry']['location']['lng'];
                 $array['estado_geo'] = 'Geolocalizado';
             } else {
-                $this->Adulto->AdultoUbicacion->saveField('estado_geo', "No geolocalizable");
+                $this->Persona->PersonaUbicacion->saveField('estado_geo', "No geolocalizable");
                 continue;
             }
-            $this->Adulto->AdultoUbicacion->save($array);
+            $this->Persona->PersonaUbicacion->save($array);
         }
     }
 

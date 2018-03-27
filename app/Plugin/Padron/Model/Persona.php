@@ -6,14 +6,11 @@ class Persona extends AppModel {
     public $tablePrefix = 'pad_';
     public $useTable = 'personas';
     public $plugin = 'Padron';
-    
     public $hasOne = [
         'PersonaUbicacion' => [
             'className' => 'Padron.PersonaUbicacion',
-            'foreignKey' => false,
-            'condition' => 'Persona.cedula = PersonaUbicacion.cedula'
+            'foreignKey' => 'persona_id',
         ],
-        
     ];
 
     public $validate = array(
