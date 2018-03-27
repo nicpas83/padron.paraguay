@@ -1,9 +1,6 @@
 <Personas>
     <search_list file="PersonasSL.php" >
-        <searchfield name="prestacion" label="Prestación" presentation="AUTOCOMPLETE" classparams="{'model':'Personas.Prestacion'}" />
-        <searchfield name="fecha_carga" label="Fecha" presentation="DATERANGE" />
-        <searchfield name="vecino" label="Vecino" />
-        <searchfield name="estado" label="Estado" presentation="ESTADOS_RECLAMOS" initialvalue="Inicial" />
+        <searchfield name="nombre" label="nombre" />
         
         <table>
             <column>
@@ -34,9 +31,7 @@
             
         </table>
         <actions>
-            <action op="A" action="add" global="true"  />
             <action op="V" action="view" />
-            <action op="E" action="edit" />
         </actions>
     </search_list>
     

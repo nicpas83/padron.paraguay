@@ -13,47 +13,16 @@ protected $data = array (
     array (
         0 => 
         array (
-            'op' => 'A',
-            'action' => 'add',
-            'global' => 'true',
-        ),
-        1 => 
-        array (
             'op' => 'V',
             'action' => 'view',
-        ),
-        2 => 
-        array (
-            'op' => 'E',
-            'action' => 'edit',
         ),
     ),
     'filters' => 
     array (
         0 => 
         array (
-            'name' => 'prestacion',
-            'label' => 'Prestación',
-            'presentation' => 'AUTOCOMPLETE',
-            'classparams' => '{\'model\':\'Personas.Prestacion\'}',
-        ),
-        1 => 
-        array (
-            'name' => 'fecha_carga',
-            'label' => 'Fecha',
-            'presentation' => 'DATERANGE',
-        ),
-        2 => 
-        array (
-            'name' => 'vecino',
-            'label' => 'Vecino',
-        ),
-        3 => 
-        array (
-            'name' => 'estado',
-            'label' => 'Estado',
-            'presentation' => 'ESTADOS_RECLAMOS',
-            'initialvalue' => 'Inicial',
+            'name' => 'nombre',
+            'label' => 'nombre',
         ),
     ),
     'columns' => 
