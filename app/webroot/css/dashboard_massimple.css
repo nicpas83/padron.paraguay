@@ -1,0 +1,20 @@
+.card {
+    border-top-color: #555;
+    border-top-width: 6px;
+    border-top-style: solid;
+}
+
+.card .panel-heading {
+    background-color: #FFF;
+}
+
+.widget.panel {
+    box-shadow: none;
+}
+.list-table {
+    list-style: none;
+    padding: 0;
+}
+.nav-section li:not(:last-child) {
+    border-right: solid 1px #CCC;
+}

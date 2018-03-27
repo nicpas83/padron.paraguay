@@ -1,0 +1,91 @@
+<Dependencias>
+    
+    <search_list file="DependenciasSLView.php">
+        <searchfield name="nombre" label="Nombre" />
+        <searchfield name="DependenciaPadre.nombre" label="Dependencia Padre" presentation="SELECT" classparams="{'model':'Acceso.Dependencia'}" />
+        <searchfield name="centro_costos_id" label="Centro de Costos" presentation="SELECT" classparams="{'model':'Acceso.CentroCostos'}" />
+        <searchfield name="estado" label="Estado" presentation="ESTADO" initialvalue="Activo" />
+                
+        <table>
+            <column>
+                <listfield name="nombre" label="Nombre" />
+            </column>
+            <column>
+                <listfield name="DependenciaPadre.nombre" label="Dependencia Padre" />
+            </column>
+            <column>
+                <listfield name="CentroCostos.nombre" label="Centro de Costos" />
+            </column>
+            <column>
+                <listfield name="jefe_user_id"  label="Jefe" presentation="SELECT" classparams="{'model':'Acceso.AppUser'}"/>
+            </column>
+            <column label="Dirección">
+                <listfield name="direccion" label="" />
+                <listfield name="geo" label="" presentation="GOOGLEMAP" classparams="{'list': true}" />
+            </column>
+            <column>
+                <listfield name="estado" label="Estado" presentation="ESTADO" />
+            </column>
+        </table>        
+        <actions>
+            <action op="V" action="view" />
+        </actions>
+        
+    </search_list>
+    
+    <search_list file="DependenciasSL.php">
+        <searchfield name="nombre" label="Nombre" />
+        <searchfield name="DependenciaPadre.nombre" label="Dependencia Padre" presentation="SELECT" classparams="{'model':'Acceso.Dependencia'}" />
+        <searchfield name="centro_costos_id" label="Centro de Costos" presentation="SELECT" classparams="{'model':'Acceso.CentroCostos'}" />
+        <searchfield name="ingreso" label="Es para ingreso" presentation="SINO" />
+        <searchfield name="estado" label="Estado" presentation="ESTADO" initialvalue="Activo" />
+        
+        <table>
+            <column>
+                <listfield name="nombre" label="Nombre" />
+            </column>
+            <column>
+                <listfield name="DependenciaPadre.nombre" label="Dependencia Padre" />
+            </column>
+            <column>
+                <listfield name="CentroCostos.nombre" label="Centro de Costos" />
+            </column>
+            <column>
+                <listfield name="jefe_user_id"  label="Jefe" presentation="SELECT" classparams="{'model':'Acceso.AppUser'}"/>
+            </column>
+            <column>
+                <listfield name="ingreso" label="Ingreso de Remitos" />
+            </column>
+            <column label="Dirección">
+                <listfield name="direccion" label="" />
+                <listfield name="geo" label="" presentation="GOOGLEMAP" classparams="{'list': true}" />
+            </column>
+            <column>
+                <listfield name="estado" label="Estado" presentation="ESTADO" />
+            </column>
+        </table>
+
+    </search_list>
+    
+    
+    <tablemaint file="DependenciasMaint.php">
+        <jsinclude file="acceso/dependencias_maint.js" />
+              
+        <fieldset title="Datos de Dependencia" columns="2">
+            <field name="nombre" label="Nombre" />
+            <field name="centro_costos_id" label="Centro de Costos" presentation="SELECT" classparams="{'model':'Acceso.CentroCostos'}" />
+            <field name="padre_dependencia_id" label="Dependencia Padre" presentation="SELECT" classparams="{'model':'Acceso.Dependencia'}" />
+            <field name="jefe_user_id" label="Jefe" actions="E|V" presentation="SELECT" classparams="{'model':'Acceso.AppUser', 'listen':{'field':'id','model':'Acceso.Dependencia'}}" />
+            <field name="ingreso" label="Ingreso" note="Indica si la dependencia recibe remitos de entrada" presentation="SINO" />
+            <field name="estado" label="Estado" presentation="ESTADO" initialvalue="Activo" />
+        </fieldset>
+        <fieldset title="Dirección">
+            <field name="direccion" label="Dirección" />
+            <field name="tmp_localidad" label="Localidad" initialvalue="Ciudad de Buenos Aires" isvisible="false" />
+            <field name="tmp_provincia" label="Provincia" initialvalue="Buenos Aires" isvisible="false" />
+            <field name="tmp_pais" label="Pais" initialvalue="Argentina" isvisible="false" />
+            <field name="geo" label="Ubicación" isvisibletable="false" presentation="GOOGLEMAP" classparams="{'calle_altura':'direccion','ciudad':'tmp_localidad','provincia':'tmp_provincia','pais':'tmp_pais'}"/>            
+        </fieldset>
+    </tablemaint>
+         
+</Dependencias>

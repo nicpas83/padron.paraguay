@@ -1,0 +1,33 @@
+<CentrosCostos>
+    
+    <search_list file="CentrosCostosSL.php">
+        <searchfield name="nombre" label="Nombre" />
+        <searchfield name="ingreso" label="Ingreso" presentation="SINO" />
+        <searchfield name="estado" label="Estado" presentation="ESTADO" />
+        
+        <table>
+            <column>
+                <listfield name="id" label="Código" presentation="CODIGO" classparams="{'sigla':'CC'}" />
+            </column>
+            <column>
+                <listfield name="nombre" label="Nombre" />
+            </column>
+            <column>
+                <listfield name="ingreso" label="Ingreso" />
+            </column>
+            <column>
+                <listfield name="estado" label="Estado" presentation="ESTADO" />
+            </column>
+        </table>
+    </search_list>
+    
+    
+    <tablemaint file="CentrosCostosMaint.php">                 
+        <fieldset title="Centro de Costos">
+            <field name="nombre" label="Nombre" />
+            <field name="ingreso" label="Ingreso" presentation="SINO" />
+            <field name="estado" label="Estado" presentation="ESTADO" initialvalue="Activo" />
+        </fieldset>
+    </tablemaint>
+         
+</CentrosCostos>

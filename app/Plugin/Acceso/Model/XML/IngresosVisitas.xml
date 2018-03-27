@@ -1,0 +1,68 @@
+<IngresosVisitas>
+    
+    <search_list file="IngresosVisitasSL.php" orderby="numero_tarjeta ASC">
+        <actions>
+            <action op="V" action="view" />
+            <action op="E" action="edit" />
+        </actions>
+        
+        <searchfield name="Visita.nombre" label="Nombre" />
+        <searchfield name="Visita.apellido" label="Apellido" />
+        <searchfield name="Visita.tipo_documento" label="Tipo de Documento" presentation="TIPOS_DOCUMENTOS" />
+        <searchfield name="Visita.documento" label="Documento" presentation="INT" size="11" />     
+        <searchfield name="fecha_ingreso" label="Fecha de Ingreso" presentation="DATE" />
+        <searchfield name="egreso" label="Egresó" presentation="SINO" initialvalue="No" />   
+        <searchfield name="piso" label="Piso" presentation="INT" size="2" note="(Solo números)" />
+        <searchfield name="sector" label="Sector" />
+        <searchfield name="numero_tarjeta" label="Número de Tarjeta" presentation="INT" size="2" note="(Solo números)" />
+            
+        <table>
+            <column>
+                <listfield name="Visita.nombre" label="Nombre" />
+            </column>
+            <column>
+                <listfield name="Visita.apellido" label="Apellido" />
+            </column>
+            <column>
+                <listfield name="Visita.tipo_documento" label="Tipo de Documento" presentation="TIPOS_DOCUMENTOS" />
+            </column>
+            <column>
+                <listfield name="Visita.documento" label="Documento" presentation="INT" size="11" />
+            </column>
+            <column>
+                <listfield name="fecha_ingreso" label="Fecha de Ingreso" presentation="DATETIME" classparams="{'no_seconds':true}" />
+            </column>
+            <column>
+                <listfield name="egreso" label="Egresó" presentation="SINO" initialvalue="No" />   
+            </column>
+            <column>
+                <listfield name="piso" label="Piso" presentation="INT" size="2" note="(Solo números)" />
+            </column>
+            <column>
+                <listfield name="sector" label="Sector" />
+            </column>
+            <column>
+                <listfield name="numero_tarjeta" label="Número de Tarjeta" presentation="INT" size="2" note="(Solo números)" />
+            </column>
+        </table>
+    </search_list>
+    
+    <tablemaint file="IngresosVisitasMaint.php">                 
+        <fieldset title="Datos del Visitante" columns="2">
+            <field name="Visita.nombre" label="Nombre" readonly="true" />
+            <field name="Visita.apellido" label="Apellido" readonly="true" />
+            <field name="Visita.tipo_documento" label="Tipo de Documento" presentation="TIPOS_DOCUMENTOS" readonly="true" />
+            <field name="Visita.documento" label="Documento" presentation="INT" size="11" note="(Solo números)" readonly="true" />
+        </fieldset>
+        <fieldset title="Descripción de la Visita" columns="2">
+            <field name="fecha_ingreso" label="Fecha de Ingreso" presentation="DATETIME" classparams="{'force':true, 'no_seconds':true}" />
+            <field name="egreso" label="Egresó" presentation="SINO" initialvalue="No" />
+            <field name="nombre" label="Nombre Visitado" />
+            <field name="apellido" label="Apellido Visitado" />
+            <field name="piso" label="Piso" presentation="INT" size="2" note="(Solo números)" />
+            <field name="sector" label="Sector" />
+            <field name="numero_tarjeta" label="Número de Tarjeta" presentation="INT" size="2" note="(Solo números)" />
+        </fieldset>
+    </tablemaint>
+         
+</IngresosVisitas>

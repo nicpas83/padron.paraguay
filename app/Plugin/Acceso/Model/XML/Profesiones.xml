@@ -1,0 +1,35 @@
+<Profesiones>
+    
+    <search_list file="ProfesionesSL.php">
+        <searchfield name="profesion" label="Nombre" />
+        <searchfield name="mes" label="Mes" presentation="MESES" /> 
+        
+     <table>
+            <column>
+                <listfield name="profesion" label="Nombre"/>
+            </column>
+            <column>
+                <listfield name="dia" label="Dia" />
+            </column>
+            <column>    
+                <listfield name="mes" label="Mes" presentation="MESES"  />
+            </column>
+            <column>    
+                <listfield name="url_template" label="Template Hombre" />
+            </column>
+            <column>    
+                <listfield name="url_template_mujer" label="Template Mujer" />
+            </column>
+        </table>
+       </search_list>
+    <tablemaint file="ProfesionesMaint.php">                 
+        <fieldset title="Profesiones" columns="2">
+            <field name="profesion" label="Nombre" breakline="true" />
+            <field name="mes" label="Mes" presentation="MESES" />
+            <field name="dia" label="Día" presentation="INT" size="2" /> 
+            <field name="url_template" label="URL Template Hombre" />
+            <field name="url_template_mujer" label="URL Template Mujer" />
+        </fieldset>
+    </tablemaint>
+         
+</Profesiones>

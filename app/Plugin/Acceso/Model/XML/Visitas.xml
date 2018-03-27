@@ -1,0 +1,43 @@
+<Visitas>
+    
+    <search_list file="VisitasSL.php">
+        <searchfield name="nombre" label="Nombre" />
+        <searchfield name="apellido" label="Apellido" />
+        <searchfield name="tipo_documento" label="Tipo de Documento" presentation="TIPOS_DOCUMENTOS" />
+        <searchfield name="documento" label="Documento" presentation="INT" size="11" />
+        
+        <table>
+            <column>
+                <listfield name="nombre" label="Nombre" />
+            </column>
+            <column>
+                <listfield name="apellido" label="Apellido" />
+            </column>
+            <column>
+                <listfield name="tipo_documento" label="Tipo de Documento" presentation="TIPOS_DOCUMENTOS" />
+            </column>
+            <column>
+                <listfield name="documento" label="Documento" presentation="INT" size="11" />
+            </column>
+        </table>
+    </search_list>
+    
+    <tablemaint file="VisitasMaint.php">                 
+        <fieldset title="Datos del Visitante" columns="2">
+            <field name="nombre" label="Nombre" />
+            <field name="apellido" label="Apellido" />
+            <field name="tipo_documento" label="Tipo de Documento" presentation="TIPOS_DOCUMENTOS" />
+            <field name="documento" label="Documento" presentation="INT" size="11" note="(Solo números)" />
+        </fieldset>
+        <table title="Ingresos" paginate="true" model="Acceso.IngresoVisita" orderby="IngresoVisita.fecha_carga DESC" columns="2">
+            <field name="fecha_ingreso" label="Fecha de Ingreso" presentation="DATETIME" classparams="{'force':true, 'no_seconds':true}" />
+            <field name="egreso" label="Egresó" presentation="SINO" initialvalue="No" />
+            <field name="nombre" label="Nombre" />
+            <field name="apellido" label="Apellido" />
+            <field name="piso" label="Piso" presentation="INT" size="2" note="(Solo números)" />
+            <field name="sector" label="Sector" />
+            <field name="numero_tarjeta" label="Número de Tarjeta" presentation="INT" size="2" note="(Solo números)" />
+        </table>
+    </tablemaint>
+         
+</Visitas>

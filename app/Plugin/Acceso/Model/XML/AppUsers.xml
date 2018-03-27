@@ -1,0 +1,125 @@
+<AppUsers>
+    <search_list file="AppUsersSLAgenda.php" title="Agenda de Contactos" orderby="lastname ASC, firstname ASC">
+        <searchfield name="lastname" label="Apellido" />
+        <searchfield name="firstname" label="Nombre" />
+        <searchfield name="telefono_laboral" label="Telefono laboral" />
+            
+        <table>
+            <column>
+                <listfield name="lastname" label="Apellido" />
+            </column>
+            <column>
+                <listfield name="firstname" label="Nombre" />
+            </column>
+            <column>
+                <listfield name="email" label="Email" />
+            </column>
+            <column>
+                <listfield name="telefono_laboral" label="Teléfono laboral" />
+            </column>
+            <column>
+                <listfield name="celular_laboral" label="Celular laboral" />
+            </column>
+            <column label="Dependencia">
+                <listfield name="Dependencia.nombre" label="" />
+                <listfield name="CentroCostos.nombre" label="Centro de Costos" />
+            </column>
+            <column>
+                <listfield name="Dependencia.direccion" label="Dirección Laboral" />
+            </column>
+        </table>
+        
+        <actions>
+        </actions>
+    </search_list>
+    
+    <search_list file="AppUsersSL.php" title="Listado de Agentes">
+        <searchfield name="firstname" label="Nombre" />
+        <searchfield name="lastname" label="Apellido" />
+        <searchfield name="email" label="Email" />
+        <searchfield name="dependencia_id" label="Repartición" presentation="SELECT" classparams="{'model':'Acceso.Dependencia', 'conditions':{'Dependencia.estado':'Activo'}}" />
+        <searchfield name="centro_costos_id" label="Secretaría/DG" presentation="SELECT" classparams="{'model':'Acceso.CentroCostos'}" />
+        <searchfield name="profesion_id" label="Profesión" presentation="SELECT" classparams="{'model':'Acceso.Profesion'}" />
+        <searchfield name="estudios" label="Estudios" />
+        <searchfield name="estado" label="Estado" presentation="ESTADO" initialvalue="Activo" />
+        
+        <table>
+            <column label="Nombre y Apellido">
+                <listfield name="fullname" />
+                <listfield name="legajo" label="Legajo" />
+            </column>
+            <column label="Contacto">
+                <listfield name="email" label="Email" />
+                <listfield name="telefono" label="Teléfono" />
+                <listfield name="celular" label="Celular" />
+            </column>
+            <column label="Repartición">
+                <listfield name="Dependencia.nombre" label="" />
+                <listfield name="CentroCostos.nombre" label="Secretaría/DG" />
+            </column>
+            <column>
+                <listfield name="sector" label="Sector" />
+            </column>
+            <column label="Profesión">
+                <listfield name="profesion_id" presentation="SELECT" classparams="{'model':'Acceso.Profesion'}"/>
+                <listfield name="estudios" label="Estudios" />
+            </column>
+            <column>
+                <listfield name="estado" label="Estado" />
+            </column>       
+        </table>
+        
+        <actions>
+            <action op="V" action="view" />
+            <action op="E" action="edit" />
+            <action op="A" action="add" global="true" label="Nuevo Agente" />
+        </actions>
+    </search_list>
+    
+    <tablemaint file="AppUsersMaint.php"> 
+        <jsinclude file="fmw/usuarios/maint_users.js" />
+
+        <fieldset title="Datos Personales" columns="2">
+            <field name="firstname" label="Nombre" />
+            <field name="lastname" label="Apellido" />
+            <field name="tipo_doc" label="Tipo Documento" presentation="TIPOS_DOCUMENTOS" />
+            <field name="nro_doc" label="Número Documento" presentation="INT" size="15" />
+            <field name="fecha_nacimiento" label="Fecha de Nacimiento" presentation="DATE" classparams="{'viewMode': 'years'}" />
+            <field name="sexo" label="Sexo" presentation="SEXO" />
+            <field name="nacionalidad" label="Nacionalidad" />
+            <field name="email" label="Email" />
+            <field name="direccion" label="Dirección" />
+            <field name="telefono" label="Teléfono" size="20" />
+            <field name="celular" label="Celular" size="20" />
+            <field name="profesion_id" label="Profesión" presentation="SELECT" classparams="{'model':'Acceso.Profesion'}" />
+        </fieldset>
+       
+        <fieldset title="Administración" columns="2">
+            <field name="password" label="Clave" presentation="PASSWORD" size="30" actions="A|E" note="Se mantiene la actual si se deja vacío." />
+            <field name="confirm_password" label="Confirma Clave" presentation="PASSWORD" size="30" actions="A|E" />
+            <field name="estado" label="Estado" presentation="ESTADO" />
+        </fieldset>
+        <table title="Roles" paginate="true" model="Acceso.AppRol" assoc="true" orderby="AppRol.nombre ASC">            
+            <field name="nombre" label="Nombre" />
+        </table>
+    </tablemaint>
+    
+    <tablemaint file="AppUsersDatosPersonalesMaint.php">
+        <jsinclude file="fmw/usuarios/maint_users.js" />
+
+        <fieldset title="Datos del Agente" columns="2">
+            <field name="firstname" label="Nombre" />
+            <field name="lastname" label="Apellido" />
+            <field name="email" label="Email" breakline="true" />
+            <field name="telefono_laboral" label="Teléfono Laboral" size="20" />
+            <field name="celular_laboral" label="Celular Laboral" size="20" breakline="true" />
+            <field name="password_actual" label="Clave Actual" presentation="PASSWORD" breakline="true" />
+            <field name="password" label="Clave" presentation="PASSWORD" note="Se mantiene la actual si se deja vacío." />
+            <field name="confirm_password" label="Confirma Clave" presentation="PASSWORD" />
+            
+        </fieldset>
+    </tablemaint>
+    
+
+    
+</AppUsers>

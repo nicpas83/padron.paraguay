@@ -1,0 +1,46 @@
+﻿<menu>
+    <menuitem label="Inicio">
+        <menuitem label="Inicio" url="" />
+        <menuitem label="Mis Datos" controller="app_users" action="datos_personales" plugin="acceso" />            
+    </menuitem>
+    
+    <menuitem label="Reclamos">
+        <menuitem label="Prestaciones" controller="prestaciones" action="index" plugin="reclamos" />
+        <menuitem label="Reclamos" controller="reclamos" action="index" plugin="reclamos" />
+        <menuitem label="Relevamientos">
+            <menuitem label="Relevamientos General" controller="relevamientos" action="index" plugin="reclamos" />       
+            <menuitem label="Relevamientos Arbolado" controller="relevamientos_arbolado" action="index" plugin="reclamos" />       
+            <menuitem label="Relevamientos Bacheo" controller="relevamientos_bacheo" action="index" plugin="reclamos" />       
+        </menuitem>
+    </menuitem>
+    
+    <menuitem label="Administración">
+        <menuitem label="Acceso">
+            <menuitem label="Usuarios" controller="users" action="index" plugin="fmw_acceso" />
+            <menuitem label="Roles" controller="rols" action="index" plugin="fmw_acceso" />
+            <menuitem label="Derechos" controller="rights" action="index" plugin="fmw_acceso" />
+            <menuitem label="Permisos" controller="permisos" action="index" plugin="fmw_acceso" />
+            <menuitem label="Botones" controller="buttons" action="index" plugin="fmw_acceso" />
+        </menuitem>
+        <menuitem label="Dashboard">
+            <menuitem label="Consultar Gráficos" plugin="fmw_dashboard" controller="charts" action="index" />
+            <menuitem label="Consultar Gauges" plugin="fmw_dashboard" controller="gauges" action="index" />
+            <menuitem label="Consultar KPIs" plugin="fmw_dashboard" controller="kpis" action="index" />
+        </menuitem>
+        <menuitem label="Sistema">
+            <menuitem label="Configuración" controller="configurations" action="edit/1" plugin="fmw_system" />
+            <menuitem label="Consultar Crons" controller="crons" action="index" plugin="fmw_system" />
+            <menuitem label="Consultar Logs" controller="logs" action="index" plugin="fmw_system" />
+            <menuitem label="Consultar Estados" controller="estados" action="index" plugin="fmw_system" />
+            <menuitem label="Consultar Bloqueos" controller="bloqueos" action="index" plugin="fmw_system" />
+        </menuitem>
+        <menuitem label="Mensajería">
+            <menuitem label="Mensajes Notificaciones" controller="notification_messages" action="index" plugin="fmw_messaging" />
+            <menuitem label="Servidores" controller="servers" action="index" plugin="fmw_messaging" />
+            <menuitem label="Templates" controller="templates" action="index" plugin="fmw_messaging" />
+            <menuitem label="Consultar Emails Entrantes" controller="entrantes" action="index" plugin="fmw_messaging" />
+            <menuitem label="Consultar Emails Salientes" controller="mensajes" action="emails" plugin="fmw_messaging" />
+            <menuitem label="Consultar SMS" controller="mensajes" action="sms" plugin="fmw_messaging" />
+        </menuitem>
+    </menuitem>
+</menu>

@@ -1,0 +1,171 @@
+@font-face {
+    font-family: "Gotham";
+    src: url("fonts/gotham-medium.eot");
+    src: url("fonts/gotham-medium.eot?#iefix") format("embedded-opentype"), 
+        url("fonts/gotham-medium.svg#Gotham") format("svg"), 
+        url("fonts/gotham-medium.woff") format("woff"), 
+        url("fonts/gotham-medium.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal; 
+}
+
+.filtros-title {
+    color: #FFD300;
+}
+
+.menu a, .user-icon {
+    background: #FFD300;
+    color: #333;
+}
+
+.main-color, .header, .top-header, .menu .highlighted, .menu a:hover, .btn-inverse:active {
+    background-color: #FFD300;
+    color: #333;
+}
+
+.boton-home-grande:hover {
+    background-color: #FFD300;
+    border: 5px solid #FFD300;
+}
+
+.boton-home-grande:hover a i {
+    color: #000;
+}
+
+.k-state-focused.k-state-selected, 
+.k-list>.k-state-focused.k-state-selected, 
+.k-listview>.k-state-focused.k-state-selected, 
+td.k-state-focused.k-state-selected {
+    background-color: #FFD300 !important;
+    -webkit-box-shadow: inset 0 0 3px 4px #FFD300 !important;
+    box-shadow: inset 0 0 3px 4px #FFD300 !important;
+}
+.k-state-focused.k-state-selected a, 
+.k-list>.k-state-focused.k-state-selected a, 
+.k-listview>.k-state-focused.k-state-selected a, 
+td.k-state-focused.k-state-selected a {
+    color: #000 !important;
+}
+
+.btn-primary {
+    background-image: none;
+    filter: none;
+    color: #333;
+    background-color: #FED300;
+    border-color: #FED300;
+}
+.btn-primary:focus,
+.btn-primary.focus,
+.btn-primary:hover {
+    color: #333;
+    background-color: #E4BC00;
+    border-color: #E4BC00;
+}
+.btn-primary:active,
+.btn-primary.active,
+.open > .dropdown-toggle.btn-primary {
+    color: #333;
+    background-color: #CCA800;
+    border-color: #CCA800;
+}
+.btn-primary:active:hover,
+.btn-primary.active:hover,
+.open > .dropdown-toggle.btn-primary:hover,
+.btn-primary:active:focus,
+.btn-primary.active:focus,
+.open > .dropdown-toggle.btn-primary:focus,
+.btn-primary:active.focus,
+.btn-primary.active.focus,
+.open > .dropdown-toggle.btn-primary.focus {
+    color: #333;
+    background-color: #CCA800;
+    border-color: #B29300;
+}
+.btn-primary:active,
+.btn-primary.active,
+.open > .dropdown-toggle.btn-primary {
+    background-image: none;
+}
+.btn-primary.disabled:hover,
+.btn-primary[disabled]:hover,
+fieldset[disabled] .btn-primary:hover,
+.btn-primary.disabled:focus,
+.btn-primary[disabled]:focus,
+fieldset[disabled] .btn-primary:focus,
+.btn-primary.disabled.focus,
+.btn-primary[disabled].focus,
+fieldset[disabled] .btn-primary.focus {
+    background-color: #337ab7;
+    border-color: #2e6da4;
+}
+.btn-primary .badge {
+    color: #FED100;
+    background-color: #333;
+}
+
+#flashMessage.message.error {
+    color: #FFF;
+    background: #E54C4C;
+}
+#flashMessage.success {
+    color: #FFF;
+    background: #79B105;
+}
+
+.pagination>.active>a, 
+.pagination>.active>a:focus, 
+.pagination>.active>a:hover, 
+.pagination>.active>span, 
+.pagination>.active>span:focus, 
+.pagination>.active>span:hover {
+    background-color: #FFD300 !important;
+    border-color: #FFD300 !important;
+    color: #000 !important;
+}
+.pagination>.active>a:focus, 
+.pagination>.active>a:hover, 
+.pagination>.active>span:focus, 
+.pagination>.active>span:hover {
+    background-color: #E3BB2A !important;
+    border-color: #E3BB2A !important;
+}
+
+div.user_info, div.user_info a, #menu.k-menu a.k-link {
+    color: #292202;
+}
+
+#menu .k-icon {
+    background-image: url('../../includes/fmw/kendo/styles/Default/sprite.png');
+}
+
+.ui-menu-item.ui-state-focus {
+    background: #FFD300 !important;
+    color: #333;
+}
+.ui-menu-item.ui-state-focus a {
+    color: #333;
+}
+
+.progress-bar-inconsistente {
+    background-color: #999;
+}
+
+.navbar {
+    min-height: 0;
+}
+
+#InscripcionTmpCalendar {
+    max-height: 639px;
+    overflow: hidden;
+}
+
+.disponible {
+    background-color: rgb(108, 160, 65) !important;
+    border-color: rgb(108, 160, 65) !important;
+    cursor: pointer;
+}
+
+.completo {
+    background-color: rgb(200, 64, 50) !important;
+    border-color: rgb(200, 64, 50) !important;
+}

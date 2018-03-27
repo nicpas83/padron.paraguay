@@ -1,0 +1,137 @@
+#container {
+    padding: 0;
+}
+.form-group:not(.last) .input {
+    padding: 0;
+}
+.form-group:not(.last) .checkboxes {
+    width: 20px; 
+}
+ul.checkboxes {
+    height: 400px;
+    overflow-y: scroll;
+}
+div.input label {
+    width: 0px;
+}
+div.input > label {
+    width: auto;
+    margin-right: 8px;
+}
+#boxFocoTmpPrestacionId > label, #boxEspacioPublicoTmpPrestacionId > label {
+    display: none;
+}
+#boxFocoTmpPrestacionId label, #boxEspacioPublicoTmpPrestacionId label {
+    width: auto !important;
+}
+.jvectormap-zoomin, .jvectormap-zoomout {
+    display: none;
+}
+#boxFocoTmpHeatmap {
+    padding-bottom: 0px;
+}
+#fullscreen, #comisarias {
+    font-size: 20px;
+}     
+#filtrosMapa {
+    position: initial;
+}
+h4.var {
+    display: initial;
+    font-weight: bold;
+    margin: 0 5px 0 0;
+}
+select.var {
+    margin-left: 7px;
+}
+.jvectormap-element {
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 13px;
+}
+
+.form-group {
+    margin: 0 !important;
+}
+fieldset[id='fieldset[0]'] .form-group {
+    font-size: 15px;
+}
+fieldset[id='fieldset[0]'] .form-group input[type=checkbox] {
+    margin-top: 7px !important;
+}
+
+.escala {
+    font-size: 16px;
+    opacity: 0.6;
+    cursor: pointer;
+    min-width: 50px;
+    display: block;
+}
+
+ul.checkboxes {
+    list-style: none;
+    padding: 7px;
+}
+
+.input.checkbox {
+    width: auto !important;
+    margin-right: 15px;
+}
+
+#boxEspacioPublicoTmpComuna {
+    padding-top: 70px;
+}
+
+th {
+    border: none !important;
+}
+
+button.multiselect {
+    background: #626262;
+    color: #FFF;
+}
+button.multiselect:hover {
+    background: #494949;
+    color: #FFF;
+}
+span.multiselect-selected-text {
+    font-weight: 300;
+}
+.btn {
+    border-radius: 0;
+}
+.dropdown-menu>.active>a, .dropdown-menu>.active>a:focus, .dropdown-menu>.active>a:hover {
+    background-color: #FFD300;
+    color: #292202;
+}
+
+.jvectormap-container{
+    background-color: rgba(200, 200, 200, 0.5);
+    height: 300px;
+    width: 300px;
+}
+
+#filtroComunas {
+    position: absolute;
+    left: 100px;
+    top: 100px;
+}
+#filtroComunas .jvectormap-container {
+    background-color: rgba(249, 249, 249, 0.9) !important;
+    border-left: solid 1px #FFD300;
+    border-bottom: solid 1px #FFD300;
+    border-right: solid 1px #FFD300;
+}
+#filtroComunas button {
+    background: #FFD300;
+    color: #292202;
+    border: none;
+    font-weight: 300;
+    font-size: 15px;
+    padding: 5px 10px;
+    width: 300px;
+    text-align: left;
+}
+
+#footer {
+    margin-top: 0;
+}

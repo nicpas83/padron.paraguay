@@ -1,0 +1,70 @@
+#descripcion .page-header {
+    margin-bottom: 0 !important;
+}
+
+#agrupaciones div.input {
+    padding: 0 !important;
+}
+
+#agrupaciones div.input input {
+    width: 100% !important;
+    border: solid 1px #999;
+    border-radius: 0;
+    border-width: 1px 0 0 1px;
+}
+
+#agrupaciones .cabecera {
+    text-align: center;
+    font-weight: bold;
+    border: solid 1px #999;
+    border-top: 0 !important;
+    border-width: 1px 0 0 1px;
+    height: 90px;
+    line-height: 90px;
+}
+#agrupaciones .cabecera:nth-child(4),
+#agrupaciones .cabecera:nth-child(5),
+#agrupaciones .cabecera:nth-child(6) {
+    line-height: 15px;
+    padding: 30px 0;
+}
+#agrupaciones .cabecera:nth-child(7) {
+    line-height: 15px;
+    padding: 22px 0;
+}
+
+.readonly {
+    padding: 7.5px 5px;
+    border: solid #999;
+    border-width: 1px 0 0 1px;
+}
+
+#agrupaciones .form-group {
+    border: solid 2px #666;
+}
+#agrupaciones .form-group div {
+    margin-top: -1px;
+}
+
+#agrupaciones .primero {
+    border-top: solid 2px #666 !important;
+}
+
+div.input label {
+    width: 100px !important;
+}
+.ml150 {
+    margin-left: 100px !important;
+}
+
+#agrupaciones .pie {
+    font-weight: bold;
+}
+
+.error-message {
+    display: none;
+}
+
+.bl0 {
+    border-left: 0 !important;
+}
