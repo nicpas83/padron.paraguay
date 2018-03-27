@@ -54,6 +54,21 @@ protected $data = array (
                 ),
                 6 => 
                 array (
+                    'name' => 'domicilio',
+                    'label' => 'Direccion Importada',
+                ),
+                7 => 
+                array (
+                    'name' => 'telefono',
+                    'label' => 'Telefono',
+                ),
+                8 => 
+                array (
+                    'name' => 'celular',
+                    'label' => 'Celular',
+                ),
+                9 => 
+                array (
                     'name' => 'email',
                     'label' => 'Email',
                 ),
@@ -70,26 +85,38 @@ protected $data = array (
             array (
                 0 => 
                 array (
-                    'name' => 'direccion',
-                    'label' => 'Dirección',
+                    'name' => 'PersonaUbicacion.route',
+                    'label' => 'Direccion',
                 ),
                 1 => 
                 array (
-                    'name' => 'tmp_provincia',
-                    'label' => 'Provincia',
-                    'isvisible' => false,
-                    'initialvalue' => 'Campana, Provincia de Buenos Aires',
+                    'name' => 'PersonaUbicacion.street_number',
+                    'label' => 'Altura',
                 ),
                 2 => 
                 array (
-                    'name' => 'tmp_pais',
-                    'label' => 'País',
-                    'isvisible' => false,
-                    'initialvalue' => 'Argentina',
+                    'name' => 'PersonaUbicacion.locality',
+                    'label' => 'Localidad',
+                ),
+                3 => 
+                array (
+                    'name' => 'PersonaUbicacion.political',
+                    'label' => 'Barrio',
+                ),
+                4 => 
+                array (
+                    'name' => 'PersonaUbicacion.administrative_area_level_2',
+                    'label' => 'Partido',
+                ),
+                5 => 
+                array (
+                    'name' => 'PersonaUbicacion.administrative_area_level_1',
+                    'label' => 'Provincia',
                 ),
             ),
             'id' => 'ubicacion',
-            'title' => 'Ubicación del Reclamo',
+            'title' => 'Ubicacion',
+            'blocks' => '6',
         ),
         2 => 
         array (
@@ -98,19 +125,14 @@ protected $data = array (
             array (
                 0 => 
                 array (
-                    'name' => 'coordenadas',
+                    'name' => 'PersonaUbicacion.location',
                     'label' => '',
                     'presentation' => 'GOOGLEMAP',
-                    'classparams' => '{\'calle_altura\':\'direccion\', \'provincia\':\'tmp_provincia\', \'pais\':\'tmp_pais\'}',
                 ),
             ),
             'id' => 'mapa',
             'title' => 'Mapa',
-        ),
-        3 => 
-        array (
-            'type' => 'files',
-            'title' => 'Archivos Adjuntos',
+            'blocks' => '6',
         ),
     ),
 );

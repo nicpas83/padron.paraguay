@@ -114,8 +114,10 @@ protected $data = array (
             array (
                 0 => 
                 array (
-                    'name' => 'email',
-                    'label' => 'Email',
+                    'name' => 'PersonaUbicacion.location',
+                    'label' => 'Ubicacion',
+                    'presentation' => 'GOOGLEMAP',
+                    'classparams' => '{\'list\':true}',
                 ),
             ),
         ),

@@ -22,7 +22,7 @@
                 <listfield name="celular" label="Tel Celular"  />
             </column>
             <column>
-                <listfield name="email" label="Email"  />
+                <listfield name="PersonaUbicacion.location" label="Ubicacion" presentation="GOOGLEMAP" classparams="{'list':true}" />
             </column>
             <column>
                 <listfield name="domicilio" label="Domicilio"  />
@@ -43,18 +43,24 @@
             <field name="fecha_nacimiento" label="Fecha Nac" presentation="DATE" />
             <field name="telefono" label="Tel Fijo" presentation="INT" />
             <field name="celular" label="Tel Celular" presentation="INT" />
+            <field name="domicilio" label="Direccion Importada"  />
+            <field name="telefono" label="Telefono"  />
+            <field name="celular" label="Celular"  />
             <field name="email" label="Email"  />
         </fieldset>
-        <fieldset title="Ubicaci�n" id="ubicacion">
-            <field name="direccion" label="Dirección" />
-            <field name="tmp_provincia" label="Provincia" initialvalue="Campana, Provincia de Buenos Aires" isvisible="false" />
-            <field name="tmp_pais" label="País" initialvalue="Argentina" isvisible="false" />
-        </fieldset>        
-        <fieldset title="Mapa" id="mapa">
-            <field name="coordenadas" label="" presentation="GOOGLEMAP" classparams="{'calle_altura':'direccion', 'provincia':'tmp_provincia', 'pais':'tmp_pais'}" />
+        <fieldset title="Ubicacion" id="ubicacion" blocks="6" >
+            <field name="PersonaUbicacion.route" label="Direccion" />
+            <field name="PersonaUbicacion.street_number" label="Altura" />
+            <field name="PersonaUbicacion.locality" label="Localidad" />
+            <field name="PersonaUbicacion.political" label="Barrio" />
+            <field name="PersonaUbicacion.administrative_area_level_2" label="Partido" />
+            <field name="PersonaUbicacion.administrative_area_level_1" label="Provincia" />
+
+        </fieldset>
+        <fieldset title="Mapa" id="mapa" blocks="6" >
+            <field name="PersonaUbicacion.location" label="" presentation="GOOGLEMAP"  />
         </fieldset>
 
-        <files title="Archivos Adjuntos" />
     </tablemaint>
          
 </Personas>

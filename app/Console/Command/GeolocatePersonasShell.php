@@ -7,7 +7,7 @@ class GeolocatePersonasShell extends AppShell {
 
     public $uses = array('Elecciones.Persona');
     public $limit = false;
-    public $max = 500;
+    public $max = 100;
     public $key = "AIzaSyCqt7h8AmXvttFKpf4hCPqxFzdaEChRFcI";
 
     public function main() {
