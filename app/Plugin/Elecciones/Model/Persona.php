@@ -5,10 +5,10 @@ class Persona extends AppModel {
     public $label = 'Personas';
     public $tablePrefix = 'pad_';
     public $useTable = 'personas';
-    public $plugin = 'Padron';
+    public $plugin = 'Elecciones';
     public $hasOne = [
         'PersonaUbicacion' => [
-            'className' => 'Padron.PersonaUbicacion',
+            'className' => 'Elecciones.PersonaUbicacion',
             'foreignKey' => 'persona_id',
         ],
     ];
