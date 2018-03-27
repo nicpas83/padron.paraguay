@@ -45,7 +45,7 @@
             <field name="celular" label="Tel Celular" presentation="INT" />
             <field name="email" label="Email"  />
         </fieldset>
-        <fieldset title="Ubicación del Reclamo" id="ubicacion">
+        <fieldset title="Ubicaci�n" id="ubicacion">
             <field name="direccion" label="Dirección" />
             <field name="tmp_provincia" label="Provincia" initialvalue="Campana, Provincia de Buenos Aires" isvisible="false" />
             <field name="tmp_pais" label="País" initialvalue="Argentina" isvisible="false" />

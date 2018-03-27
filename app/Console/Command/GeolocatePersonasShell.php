@@ -5,7 +5,7 @@ App::import('Vendor', 'funciones');
 
 class GeolocatePersonasShell extends AppShell {
 
-    public $uses = array('Padron.Persona');
+    public $uses = array('Elecciones.Persona');
     public $limit = false;
     public $max = 500;
     public $key = "AIzaSyCqt7h8AmXvttFKpf4hCPqxFzdaEChRFcI";
