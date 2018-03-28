@@ -2,6 +2,7 @@
     <menuitem label="Inicio" url="" />
     <menuitem label="Padron">
         <menuitem label="Padron" plugin="elecciones" controller="personas" action="index" />
+        <menuitem label="Mapa" plugin="elecciones" controller="personas" action="mapa" />
     </menuitem>
     <menuitem label="Administración">
         <menuitem label="Acceso">

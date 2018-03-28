@@ -23,5 +23,17 @@ class PersonasController extends AppController {
         $this->maint = Parse::getData('Elecciones.Personas/PersonasMaint');
         parent::view($id, $return);
     }
+    
+    public function mapa() {
+        $this->maint = Parse::getData('Elecciones.Personas/PersonasMaint');
+        
+    }
+    
+    public function ajax_get_personas() {
+        $personas = $this->Persona->PersonaUbicacion->find('all', ['conditions' => ['estado_geo' => 'Geolocalizado'], 'recursive' => -1]);
+       
+        $this->set("data", $personas);
+        return $this->render("/ajax", "ajax");
+    }
 
 }
