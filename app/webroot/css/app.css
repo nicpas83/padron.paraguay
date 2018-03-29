@@ -47,7 +47,8 @@ td.k-state-focused.k-state-selected a {
     color: #000 !important;
 }
 
-.btn-primary {
+.btn-primary,
+.btn-secondary {
     background-image: none;
     filter: none;
     color: #333;
@@ -56,18 +57,17 @@ td.k-state-focused.k-state-selected a {
 }
 .btn-primary:focus,
 .btn-primary.focus,
-.btn-primary:hover {
+.btn-primary:hover,
+.btn-secondary:focus,
+.btn-secondary.focus,
+.btn-secondary:hover{
     color: #333;
     background-color: #E4BC00;
     border-color: #E4BC00;
 }
 .btn-primary:active,
 .btn-primary.active,
-.open > .dropdown-toggle.btn-primary {
-    color: #333;
-    background-color: #CCA800;
-    border-color: #CCA800;
-}
+.open > .dropdown-toggle.btn-primary,
 .btn-primary:active:hover,
 .btn-primary.active:hover,
 .open > .dropdown-toggle.btn-primary:hover,
@@ -76,14 +76,29 @@ td.k-state-focused.k-state-selected a {
 .open > .dropdown-toggle.btn-primary:focus,
 .btn-primary:active.focus,
 .btn-primary.active.focus,
-.open > .dropdown-toggle.btn-primary.focus {
+.open > .dropdown-toggle.btn-primary.focus,
+.btn-secondary:active,
+.btn-secondary.active,
+.open > .dropdown-toggle.btn-secondary,
+.btn-secondary:active:hover,
+.btn-secondary.active:hover,
+.open > .dropdown-toggle.btn-secondary:hover,
+.btn-secondary:active:focus,
+.btn-secondary.active:focus,
+.open > .dropdown-toggle.btn-secondary:focus,
+.btn-secondary:active.focus,
+.btn-secondary.active.focus,
+.open > .dropdown-toggle.btn-secondary.focus {
     color: #333;
     background-color: #CCA800;
     border-color: #B29300;
 }
 .btn-primary:active,
 .btn-primary.active,
-.open > .dropdown-toggle.btn-primary {
+.open > .dropdown-toggle.btn-primary,
+.btn-secondary:active,
+.btn-secondary.active,
+.open > .dropdown-toggle.btn-secondary {
     background-image: none;
 }
 .btn-primary.disabled:hover,
@@ -94,11 +109,21 @@ fieldset[disabled] .btn-primary:hover,
 fieldset[disabled] .btn-primary:focus,
 .btn-primary.disabled.focus,
 .btn-primary[disabled].focus,
-fieldset[disabled] .btn-primary.focus {
+fieldset[disabled] .btn-primary.focus,
+.btn-secondary.disabled:hover,
+.btn-secondary[disabled]:hover,
+fieldset[disabled] .btn-secondary:hover,
+.btn-secondary.disabled:focus,
+.btn-secondary[disabled]:focus,
+fieldset[disabled] .btn-secondary:focus,
+.btn-secondary.disabled.focus,
+.btn-secondary[disabled].focus,
+fieldset[disabled] .btn-secondary.focus {
     background-color: #337ab7;
     border-color: #2e6da4;
 }
-.btn-primary .badge {
+.btn-primary .badge,
+.btn-secondary .badge {
     color: #FED100;
     background-color: #333;
 }
