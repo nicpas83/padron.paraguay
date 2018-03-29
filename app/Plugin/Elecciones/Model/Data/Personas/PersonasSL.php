@@ -13,11 +13,6 @@ protected $data = array (
     'warning' => '',
     'actions' => 
     array (
-        0 => 
-        array (
-            'op' => 'V',
-            'action' => 'view',
-        ),
     ),
     'filters' => 
     array (
@@ -84,7 +79,7 @@ protected $data = array (
         ),
         4 => 
         array (
-            'label' => '',
+            'label' => 'Contacto',
             'sortfield' => '',
             'fields' => 
             array (
@@ -93,24 +88,16 @@ protected $data = array (
                     'name' => 'telefono',
                     'label' => 'Tel Fijo',
                 ),
-            ),
-        ),
-        5 => 
-        array (
-            'label' => '',
-            'sortfield' => '',
-            'fields' => 
-            array (
-                0 => 
+                1 => 
                 array (
                     'name' => 'celular',
                     'label' => 'Tel Celular',
                 ),
             ),
         ),
-        6 => 
+        5 => 
         array (
-            'label' => 'Domicilio',
+            'label' => 'Domicilio Padron',
             'sortfield' => '',
             'fields' => 
             array (
@@ -121,30 +108,32 @@ protected $data = array (
                 ),
                 1 => 
                 array (
-                    'name' => 'localidad',
-                    'label' => 'Localidad',
+                    'name' => 'barrio',
+                    'label' => 'Barrio',
                 ),
             ),
         ),
-        7 => 
+        6 => 
         array (
-            'label' => 'Google',
+            'label' => 'Domicilio Google',
             'sortfield' => '',
             'fields' => 
             array (
                 0 => 
                 array (
-                    'name' => 'PersonaUbicacion.route',
+                    'name' => 'PersonaUbicacion.display_field',
                     'label' => '',
                 ),
                 1 => 
                 array (
-                    'name' => 'PersonaUbicacion.street_number',
-                    'label' => 'Localidad',
+                    'name' => 'PersonaUbicacion.location',
+                    'label' => '',
+                    'presentation' => 'GOOGLEMAP',
+                    'classparams' => '{\'list\':true}',
                 ),
             ),
         ),
-        8 => 
+        7 => 
         array (
             'label' => '',
             'sortfield' => '',
@@ -152,10 +141,18 @@ protected $data = array (
             array (
                 0 => 
                 array (
-                    'name' => 'PersonaUbicacion.location',
-                    'label' => 'Ubicacion',
-                    'presentation' => 'GOOGLEMAP',
-                    'classparams' => '{\'list\':true}',
+                    'name' => 'PersonaUbicacion.political',
+                    'label' => 'Barrio',
+                ),
+                1 => 
+                array (
+                    'name' => 'PersonaUbicacion.locality',
+                    'label' => 'Localidad',
+                ),
+                2 => 
+                array (
+                    'name' => 'PersonaUbicacion.administrative_area_level_2',
+                    'label' => 'Partido',
                 ),
             ),
         ),

@@ -15,22 +15,25 @@
             <column>
                 <listfield name="fecha_nacimiento" label="Fecha Nac." presentation="DATE"/>
             </column>
-            <column>
+            <column label="Contacto">
                 <listfield name="telefono" label="Tel Fijo" />
-            </column>
-            <column>
                 <listfield name="celular" label="Tel Celular"  />
             </column>
-            <column label="Domicilio">
+            <column label="Domicilio Padron">
                 <listfield name="domicilio" label=""  />
-                <listfield name="localidad" label="Localidad"  />
+                <listfield name="barrio" label="Barrio"  />
+            </column>
+            <column label="Domicilio Google">
+                <listfield name="PersonaUbicacion.display_field" label=""  />
+                <listfield name="PersonaUbicacion.location" label="" presentation="GOOGLEMAP" classparams="{'list':true}" />
             </column>
             <column>
-                <listfield name="PersonaUbicacion.location" label="Ubicacion" presentation="GOOGLEMAP" classparams="{'list':true}" />
+                <listfield name="PersonaUbicacion.political" label="Barrio"  />
+                <listfield name="PersonaUbicacion.locality" label="Localidad"  />
+                <listfield name="PersonaUbicacion.administrative_area_level_2" label="Partido"  />
             </column>
         </table>
         <actions>
-            <action op="V" action="view" />
         </actions>
     </search_list>
     
