@@ -58,7 +58,8 @@ class GeolocatePersonasShell extends AppShell {
             }
           
             // Geolocalizo
-            $url_google = "https://maps.googleapis.com/maps/api/geocode/json?key=" . $this->key . "&address=" . urlencode(trim($persona['Persona']['domicilio']) . $persona['Persona']['zona_civica'] . ", Argentina") . "&sensor=false";
+            $domicilio = $persona['Persona']['domicilio'] . ", " . $persona['Persona']['localidad'] . ", " . $persona['Persona']['zona_civica'] . ", Argentina";
+            $url_google = "https://maps.googleapis.com/maps/api/geocode/json?key=" . $this->key . "&address=" . urlencode(trim($domicilio)) . "&sensor=false";
             $json = file_get_contents($url_google);
             $jdata = json_decode($json, true);
             if ($jdata['status'] == "OVER_QUERY_LIMIT") {

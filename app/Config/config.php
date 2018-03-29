@@ -1,7 +1,7 @@
 <?php
 
 if (!defined('CAKE_FRAMEWORK')) {
-    define('CAKE_FRAMEWORK', DS . 'XAMPP' . DS . 'htdocs' . DS . 'framework');
+    define('CAKE_FRAMEWORK', DS . 'Applications' . DS . 'MAMP' . DS . 'htdocs' . DS . 'framework-bootstrap');
 }
 
 if (!defined('WWW')) {
@@ -46,16 +46,14 @@ if (!class_exists('AppConfig')) {
                 'export' => true,
             ],
             'site' => [
-                'serial' => [
-                    '3A68D-723A0-88AE9-2F3FE-462C7-E2A65-68EC9-D7A3D'
-                ],
+                'serial' => '15E4C-A0F9E-829D4-160FD-BF6E6-C9203-79A41-11B21',
                 'ajax' => [
                     'enabled' => false,
                     'loading' => "Cargando contenido",
                 ],
                 'googlemaps' => [
-                    'key' => 'AIzaSyBSNXkw6yWmzIqBsV0WuGPfe7oSg6jYV54',
-                ]
+                    'key' => 'AIzaSyDSnBZ_IlENTOdF0lt6F5B_UuYLxPCZrd0',
+                ],
             ],
             'users' => [
                 'login' => [

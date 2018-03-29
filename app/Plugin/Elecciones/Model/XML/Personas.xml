@@ -21,14 +21,13 @@
             <column>
                 <listfield name="celular" label="Tel Celular"  />
             </column>
+            <column label="Domicilio">
+                <listfield name="domicilio" label=""  />
+                <listfield name="localidad" label="Localidad"  />
+            </column>
             <column>
                 <listfield name="PersonaUbicacion.location" label="Ubicacion" presentation="GOOGLEMAP" classparams="{'list':true}" />
             </column>
-            <column>
-                <listfield name="domicilio" label="Domicilio"  />
-            </column>
-            
-            
         </table>
         <actions>
             <action op="V" action="view" />

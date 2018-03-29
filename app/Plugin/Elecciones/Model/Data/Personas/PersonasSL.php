@@ -9,6 +9,8 @@ class PersonasSL extends AbstractData {
 protected $data = array (
     'translatepath' => NULL,
     'title' => '',
+    'info' => '',
+    'warning' => '',
     'actions' => 
     array (
         0 => 
@@ -108,6 +110,42 @@ protected $data = array (
         ),
         6 => 
         array (
+            'label' => 'Domicilio',
+            'sortfield' => '',
+            'fields' => 
+            array (
+                0 => 
+                array (
+                    'name' => 'domicilio',
+                    'label' => '',
+                ),
+                1 => 
+                array (
+                    'name' => 'localidad',
+                    'label' => 'Localidad',
+                ),
+            ),
+        ),
+        7 => 
+        array (
+            'label' => 'Google',
+            'sortfield' => '',
+            'fields' => 
+            array (
+                0 => 
+                array (
+                    'name' => 'PersonaUbicacion.route',
+                    'label' => '',
+                ),
+                1 => 
+                array (
+                    'name' => 'PersonaUbicacion.street_number',
+                    'label' => 'Localidad',
+                ),
+            ),
+        ),
+        8 => 
+        array (
             'label' => '',
             'sortfield' => '',
             'fields' => 
@@ -118,19 +156,6 @@ protected $data = array (
                     'label' => 'Ubicacion',
                     'presentation' => 'GOOGLEMAP',
                     'classparams' => '{\'list\':true}',
-                ),
-            ),
-        ),
-        7 => 
-        array (
-            'label' => '',
-            'sortfield' => '',
-            'fields' => 
-            array (
-                0 => 
-                array (
-                    'name' => 'domicilio',
-                    'label' => 'Domicilio',
                 ),
             ),
         ),
