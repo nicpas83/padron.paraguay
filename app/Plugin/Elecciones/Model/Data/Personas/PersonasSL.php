@@ -39,19 +39,25 @@ protected $data = array (
         ),
         4 => 
         array (
+            'name' => 'PersonaUbicacion.estado_geo',
+            'label' => 'Estado Geolocalización',
+            'presentation' => 'GEOLOCALIZACION::ESTADO_GEO',
+        ),
+        5 => 
+        array (
             'name' => 'PersonaUbicacion.political',
             'label' => 'Barrio',
             'presentation' => 'SELECTFIELD',
             'classparams' => '{\'model\':\'Elecciones.PersonaUbicacion\', \'field\':\'political\', \'format\':\'keyVal\'}',
         ),
-        5 => 
+        6 => 
         array (
             'name' => 'PersonaUbicacion.locality',
             'label' => 'Localidad',
             'presentation' => 'SELECTFIELD',
             'classparams' => '{\'model\':\'Elecciones.PersonaUbicacion\', \'field\':\'locality\', \'format\':\'keyVal\'}',
         ),
-        6 => 
+        7 => 
         array (
             'name' => 'PersonaUbicacion.administrative_area_level_2',
             'label' => 'Partido',
