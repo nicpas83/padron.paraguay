@@ -19,7 +19,44 @@ protected $data = array (
         0 => 
         array (
             'name' => 'nombre',
-            'label' => 'nombre',
+            'label' => 'Nombre',
+        ),
+        1 => 
+        array (
+            'name' => 'apellido',
+            'label' => 'Apellido',
+        ),
+        2 => 
+        array (
+            'name' => 'cedula',
+            'label' => 'Cedula',
+        ),
+        3 => 
+        array (
+            'name' => 'fecha_nacimiento',
+            'label' => 'Fecha Nac.',
+            'presentation' => 'DATERANGE',
+        ),
+        4 => 
+        array (
+            'name' => 'PersonaUbicacion.political',
+            'label' => 'Barrio',
+            'presentation' => 'SELECTFIELD',
+            'classparams' => '{\'model\':\'Elecciones.PersonaUbicacion\', \'field\':\'political\', \'format\':\'keyVal\'}',
+        ),
+        5 => 
+        array (
+            'name' => 'PersonaUbicacion.locality',
+            'label' => 'Localidad',
+            'presentation' => 'SELECTFIELD',
+            'classparams' => '{\'model\':\'Elecciones.PersonaUbicacion\', \'field\':\'locality\', \'format\':\'keyVal\'}',
+        ),
+        6 => 
+        array (
+            'name' => 'PersonaUbicacion.administrative_area_level_2',
+            'label' => 'Partido',
+            'presentation' => 'SELECTFIELD',
+            'classparams' => '{\'model\':\'Elecciones.PersonaUbicacion\', \'field\':\'administrative_area_level_2\', \'format\':\'keyVal\'}',
         ),
     ),
     'columns' => 

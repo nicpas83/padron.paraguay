@@ -1,7 +1,13 @@
 <Personas>
     <search_list file="PersonasSL.php" >
-        <searchfield name="nombre" label="nombre" />
-        
+        <searchfield name="nombre" label="Nombre" />
+        <searchfield name="apellido" label="Apellido" />
+        <searchfield name="cedula" label="Cedula" />
+        <searchfield name="fecha_nacimiento" label="Fecha Nac." presentation="DATERANGE"/>
+        <searchfield name="PersonaUbicacion.political" label="Barrio" presentation="SELECTFIELD" classparams="{'model':'Elecciones.PersonaUbicacion', 'field':'political', 'format':'keyVal'}" />
+        <searchfield name="PersonaUbicacion.locality" label="Localidad" presentation="SELECTFIELD" classparams="{'model':'Elecciones.PersonaUbicacion', 'field':'locality', 'format':'keyVal'}" />
+        <searchfield name="PersonaUbicacion.administrative_area_level_2" label="Partido" presentation="SELECTFIELD" classparams="{'model':'Elecciones.PersonaUbicacion', 'field':'administrative_area_level_2', 'format':'keyVal'}" />
+
         <table>
             <column>
                 <listfield name="nombre" label="Nombre"  />
