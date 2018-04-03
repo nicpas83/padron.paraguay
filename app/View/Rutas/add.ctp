@@ -9,8 +9,8 @@ $this->Html->script('https://developers.google.com/maps/documentation/javascript
     <div class="row">
         <div class="col-5">
             <?php echo $this->Template->drawAllBlocks(); ?>
-            <a href="<?php echo WWW; ?>rutas/index" id="cancelButton" class="btn btn-default pull-right mr10 mt10">Cancelar</a>
-            <input class="btn btn-primary pull-right mt10" type="submit" value="Plotear" />
+            <input class="btn btn-primary float-right mt10" type="submit" value="Plotear" />
+            <a href="<?php echo WWW; ?>elecciones/rutas/index" id="cancelButton" class="btn btn-outline-secondary float-right mr10 mt10">Cancelar</a>
         </div>
         <div class="col-7">
             <fieldset>
@@ -20,7 +20,7 @@ $this->Html->script('https://developers.google.com/maps/documentation/javascript
 
                 <div class="pull-left" id="mapa" style="width: 100%; height: 450px;"></div>
                 <div class="pull-left mt15">
-                    <a href="javascript:void(0);" class="btn btn-primary" id="buttonGenerarRuta"><span class="k-icon k-i-plus"></span>Generar Ruta</a>
+                    <a href="javascript:void(0);" class="btn btn-primary float-right" id="buttonGenerarRuta"><i class="fas fa fa-plus"></i> Generar Ruta</a>
                 </div>
                 <div id="windowConfirmarRuta"></div>
             </fieldset>

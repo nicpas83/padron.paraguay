@@ -56,7 +56,7 @@ class PersonasController extends AppController {
 
     public function ajax_get_barrios() {
         $localidades = $this->Persona->PersonaUbicacion->find("all", [
-            "conditions" => ["political IS NOT NULL"],
+            "conditions" => ["political IS NOT NULL", "political != ''"],
             "group" => "political",
             "fields" => ["political"],
             "order" => "political",
@@ -67,7 +67,7 @@ class PersonasController extends AppController {
 
     public function ajax_get_localidades() {
         $localidades = $this->Persona->PersonaUbicacion->find("all", [
-            "conditions" => ["locality IS NOT NULL"],
+            "conditions" => ["locality IS NOT NULL", "locality != ''"],
             "group" => "locality",
             "fields" => ["locality"],
             "order" => "locality",
@@ -78,7 +78,7 @@ class PersonasController extends AppController {
 
     public function ajax_get_partidos() {
         $partidos = $this->Persona->PersonaUbicacion->find("all", [
-            "conditions" => ["administrative_area_level_2 IS NOT NULL"],
+            "conditions" => ["administrative_area_level_2 IS NOT NULL", "administrative_area_level_2 != ''"],
             "group" => "administrative_area_level_2",
             "fields" => ["administrative_area_level_2"],
             "order" => "administrative_area_level_2",
@@ -89,7 +89,7 @@ class PersonasController extends AppController {
 
     public function ajax_get_provincias() {
         $provincias = $this->Persona->PersonaUbicacion->find("all", [
-            "conditions" => ["administrative_area_level_1 IS NOT NULL"],
+            "conditions" => ["administrative_area_level_1 IS NOT NULL", "administrative_area_level_1 != ''"],
             "group" => "administrative_area_level_1",
             "fields" => ["administrative_area_level_1"],
             "order" => "administrative_area_level_1",

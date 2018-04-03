@@ -9,6 +9,10 @@
     font-style: normal; 
 }
 
+.btn .fa {
+    color: #FFF;
+}
+
 .filtros-title {
     color: #CC172C;
 }
@@ -145,7 +149,6 @@ fieldset[disabled] .btn-secondary.focus {
 .pagination>.active>span:hover {
     background-color: #CC172C !important;
     border-color: #CC172C !important;
-    color: #000 !important;
 }
 .pagination>.active>a:focus, 
 .pagination>.active>a:hover, 
