@@ -25,7 +25,7 @@ $this->Html->script('rutas/view', array('inline' => false));
     <?php echo $this->Template->drawBlockById("mapa-ruta"); ?>
 </div>
 <div class="col-sm-12">
-    <?php echo $this->Template->drawBlockById("votantes"); ?>
+    <?php echo $this->Template->drawBlockById("socios"); ?>
 </div>
 
 <?php echo $this->element('files/list', array('files' => $files, 'add' => false)); ?>

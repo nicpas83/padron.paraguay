@@ -1,33 +1,29 @@
 <?php
-
 $this->Html->script('https://maps.google.com/maps/api/js?key=' . AppConfig::get('site.googlemaps.key') . '&sensor=false', array('inline' => false));
-$this->Html->script('mapa.js', array('inline' => false));
+$this->Html->script('presentation/rutas/mapa.js', array('inline' => false));
+$this->Html->script('https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js', array('inline' => false));
 ?>
 
 <form action="/rutas/add" id="RutaAddForm" enctype="multipart/form-data" method="post" accept-charset="utf-8" onsubmit="plotear();
         return false;">
-    <fieldset>
-        <div class="pull-left mt15 col-sm-10">
-            <div id="mapa" style="width: 1030px; height: 600px;"></div>
+    <div class="row">
+        <div class="col-5">
+            <?php echo $this->Template->drawAllBlocks(); ?>
+            <a href="<?php echo WWW; ?>rutas/index" id="cancelButton" class="btn btn-default pull-right mr10 mt10">Cancelar</a>
+            <input class="btn btn-primary pull-right mt10" type="submit" value="Plotear" />
         </div>
-        <div class="pull-left mt15 col-sm-2">
-            <div class="form-inline col-sm-12 text-center">
-                <label for="circuito">Circuito</label>
-                <select id="circuito" name="circuito" class="ml10 form-control">
-                    <option value=""></option>
-                    <option value="155">155</option>
-                    <option value="155A">155A</option>
-                    <option value="156">156</option>
-                    <option value="156A">156A</option>
-                    <option value="156B">156B</option>
-                </select>  
-            </div>
-            <div class="col-sm-12 mt25 text-center">
-                <a class="btn btn-primary" id="plotearRuta" data-toggle="tooltip" data-placement="top" title="Plotear Votantes" href="javascript:void(0);" onclick="plotear();"><i class="fa fa-map-marker"></i> Plotear</a>
-            </div>
-            <div class="col-sm-12 mt25 text-center">
-                <a class="btn btn-primary" id="generarRuta" data-toggle="tooltip" data-placement="top" title="Generar Ruta" href="javascript:void(0);" onclick="generarRuta();"><i class="fa fa-map"></i> Ruta</a>
-            </div>
+        <div class="col-7">
+            <fieldset>
+                <div class="page-header">
+                    <h2>Mapa</h2>
+                </div>
+
+                <div class="pull-left" id="mapa" style="width: 100%; height: 450px;"></div>
+                <div class="pull-left mt15">
+                    <a href="javascript:void(0);" class="btn btn-primary" id="buttonGenerarRuta"><span class="k-icon k-i-plus"></span>Generar Ruta</a>
+                </div>
+                <div id="windowConfirmarRuta"></div>
+            </fieldset>
         </div>
-    </fieldset>
+    </div>
 </form>

@@ -1,0 +1,62 @@
+<Rutas>
+    
+    <search_list file="RutasSL.php">
+        <cssinclude file="rutas.css" />
+        
+        <actions>
+            <action op="V" action="view" />
+            <action op="P" action="imprimir" label="Imprimir Ruta" />
+            <action op="D" action="delete" post="¿Estás seguro de borrar el registro?" />
+            <action op="A" action="add" global="true" label="Cargar Ruta" />
+        </actions>
+        
+        <jsinclude file="rutas/index" />
+        
+        <searchfield name="Ruta.id" label="Número" size="5" />
+        <searchfield name="Ruta.fecha_carga" label="Fecha Carga" presentation="DATE" />
+        <searchfield name="Ruta.encargado" label="Encargado" />
+        <searchfield name="Ruta.tmp_comuna" label="Comuna" presentation="RUTAS::COMUNAS_RUTA" />
+        <searchfield name="Ruta.realizada" label="Estado" presentation="RUTAS::ESTADO_RUTA" initialvalue="No" />
+        
+        <listfield name="Ruta.id" label="Número" />
+        <listfield name="Ruta.fecha_carga" label="Fecha Carga" presentation="DATETIME" classparams="{'no_seconds':true}" />
+        <listfield name="Ruta.encargado" label="Encargado" />
+        <listfield name="Ruta.realizada" label="Realizada" presentation="RUTAS::ESTADO_RUTA" />
+        <!--<listfield name="Ruta.tmp_id" label="Imprimir" presentation="RUTAS::IMPRIMIR" />-->
+    </search_list>
+           
+    <tablemaint file="RutasAddMaint.php">
+        <jsinclude file="presentation/rutas/mapa" />
+        
+        <fieldset title="Filtros" columns="1">
+            <field name="barrio" label="Barrio" presentation="SELECTARRAY" />
+            <field name="localidad" label="Localidad" presentation="SELECTARRAY" />
+            <field name="partido" label="Partido" presentation="SELECTARRAY" />
+            <field name="provincia" label="Provincia" presentation="SELECTARRAY" />
+        </fieldset>
+    </tablemaint>
+         
+    <tablemaint file="RutasMaint.php">        
+        <fieldset title="Datos de la Ruta" columns="1" id="datos">
+            <field name="id" label="Número" readonly="true" />
+            <field name="encargado" label="Encargado" />
+            <field name="informacion" label="Información" presentation="TEXTAREA" />
+            <field name="Ruta.realizada" label="Realizada" presentation="RUTAS::ESTADO_RUTA" />
+        </fieldset>
+        
+        <fieldset title="Mapa" id="mapa-ruta">
+            <field name="centro" label="Centro" isvisible="false" />
+            <field name="zoom" label="Zoom" isvisible="false" />
+            <field name="tmp_id" label="Mapa" presentation="RUTAS::MAPA" readonly="true" />
+        </fieldset>
+        
+        <table title="Personas" id="socios" paginate="false" model="Elecciones.Persona" assoc="true" multiple="true" orderby="PersonaUbicacion.route ASC, PersonaUbicacion.street_number ASC">            
+            <field name="Persona.nombre" label="Nombre" />
+            <field name="Persona.apellido" label="Apellido" />
+            <field name="Persona.domicilio" label="Domicilio" />
+            <field name="PersonaUbicacion.route" label="Calle" />
+            <field name="PersonaUbicacion.street_number" label="Altura" />
+        </table>
+    </tablemaint>
+         
+</Rutas>

@@ -12,6 +12,12 @@ class Persona extends AppModel {
             'foreignKey' => 'persona_id',
         ],
     ];
+    public $belongsTo = array(
+        'Ruta' => array(
+            'className' => 'Elecciones.Ruta',
+            'foreignKey' => 'ruta_id',
+        )
+    );
 
     public $validate = array(
         'cedula' => array(

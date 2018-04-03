@@ -4,6 +4,7 @@
         <menuitem label="Padron" plugin="elecciones" controller="personas" action="index" />
         <menuitem label="Mapa" plugin="elecciones" controller="personas" action="mapa" />
     </menuitem>
+    <menuitem label="Rutas" plugin="elecciones" controller="rutas" action="index" />
     <menuitem label="Administración">
         <menuitem label="Acceso">
             <menuitem label="Usuarios" controller="users" action="index" plugin="fmw_acceso" />
