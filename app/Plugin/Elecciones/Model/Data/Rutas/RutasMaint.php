@@ -105,6 +105,21 @@ protected $data = array (
                     'name' => 'PersonaUbicacion.street_number',
                     'label' => 'Altura',
                 ),
+                5 => 
+                array (
+                    'name' => 'PersonaUbicacion.locality',
+                    'label' => 'Localidad',
+                ),
+                6 => 
+                array (
+                    'name' => 'PersonaUbicacion.administrative_area_level_2',
+                    'label' => 'Partido',
+                ),
+                7 => 
+                array (
+                    'name' => 'PersonaUbicacion.administrative_area_level_1',
+                    'label' => 'Provincia',
+                ),
             ),
             'id' => 'socios',
             'paginate' => false,

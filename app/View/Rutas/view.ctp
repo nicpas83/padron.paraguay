@@ -18,21 +18,23 @@ $this->Html->script('rutas/view', array('inline' => false));
 
 <?php echo (!empty($title) ? "<h3 class='maint-title'>" . $title . "</h3>" : ""); ?>
 
-<div class="col-sm-5">
-    <?php echo $this->Template->drawBlockById("datos"); ?>
-</div>
-<div class="col-sm-7">
-    <?php echo $this->Template->drawBlockById("mapa-ruta"); ?>
-</div>
-<div class="col-sm-12">
-    <?php echo $this->Template->drawBlockById("socios"); ?>
+<div class="row">
+    <div class="col-5">
+        <?php echo $this->Template->drawBlockById("datos"); ?>
+    </div>
+    <div class="col-7">
+        <?php echo $this->Template->drawBlockById("mapa-ruta"); ?>
+    </div>
+    <div class="col-12">
+        <?php echo $this->Template->drawBlockById("socios"); ?>
+    </div>
 </div>
 
 <?php echo $this->element('files/list', array('files' => $files, 'add' => false)); ?>
 
 <?php
-echo $this->Html->link(__('Imprimir'), 'imprimir/' . $model_id, array('class' => 'btn btn-primary pull-right mt10', 'target' => '_blank'));
-echo $this->Html->link(__('Continuar'), $next, array('onclick' => 'return loadContent(this);', 'class' => 'btn btn-default pull-right mt10 mr10'));
+echo $this->Html->link(__('Imprimir'), 'imprimir/' . $model_id, array('class' => 'btn btn-primary float-right mb20', 'target' => '_blank'));
+echo $this->Html->link(__('Continuar'), $next, array('onclick' => 'return loadContent(this);', 'class' => 'btn btn-outline-secondary float-right mb20 mr15'));
 ?>
 
 <?php echo $this->element('js_initial'); ?>

@@ -56,6 +56,9 @@
             <field name="Persona.domicilio" label="Domicilio" />
             <field name="PersonaUbicacion.route" label="Calle" />
             <field name="PersonaUbicacion.street_number" label="Altura" />
+            <field name="PersonaUbicacion.locality" label="Localidad" />
+            <field name="PersonaUbicacion.administrative_area_level_2" label="Partido" />
+            <field name="PersonaUbicacion.administrative_area_level_1" label="Provincia" />
         </table>
     </tablemaint>
          
