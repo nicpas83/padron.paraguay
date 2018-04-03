@@ -106,8 +106,7 @@ class RutasController extends AppController {
             throw new NotFoundException(__('Registro inexistente.'));
         }
 
-        $this->Ruta->Query("UPDATE ele_socios SET ruta_id='No' WHERE id IN (SELECT socio_id FROM ele_socios_rutas WHERE ruta_id=" . $id . ")");
-        $this->Ruta->Query("DELETE FROM ele_socios_rutas WHERE ruta_id=" . $id);
+        $this->Ruta->Query("UPDATE pad_personas SET ruta_id=NULL WHERE ruta_id='" . $id . "'");
         parent::delete($id);
     }
 
